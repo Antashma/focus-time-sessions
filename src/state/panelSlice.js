@@ -5,14 +5,14 @@ import focusEndSound from "../assets/Level_Complete.wav"
 const initialState = {
 	active: null,
 	focus: {
-		duration: 60,
+		duration: 1500,
 		isRunning: false,
 		bgColor: "#AA336A",
 		fgColor: "#FFB6C1",
 		endSound: focusEndSound,
 	},
 	break : {
-		duration: 30,
+		duration: 300,
 		isRunning: false,
 		bgColor: "#FFB6C1",
 		fgColor: "#AA336A",
