@@ -4,6 +4,7 @@ import focusEndSound from "../assets/Level_Complete.wav"
 
 const initialState = {
 	active: null,
+	endTime: null,
 	focus: {
 		duration: 1500,
 		isRunning: false,
@@ -27,10 +28,21 @@ export const panelSlice = createSlice({
 		setActive: (state, action) => {
 			const title = action.payload;
 			state.active = title;
+			//state.endTime = null;
+		},
+		setEndTime: (state, action) => {
+			if (!state.active) {
+				state.endTime = null;
+			} else {
+				let title = action.payload;
+				let durationInMs = state[title].duration * 1000;
+				state.endTime = Date.now() + durationInMs;
+			}
 		},
 		decrement: (state, action) => {
 			const title = action.payload;
-			state[title].duration -= 1;
+			state[title].duration = (state.endTime - Date.now())/1000;
+			console.log(state[title].duration);
 		},
 		toggleRunning: (state, action) => {
 			const { title, runValue } = action.payload;
@@ -47,7 +59,8 @@ export const {
 	decrement, 
 	toggleRunning, 
 	resetDuration, 
-	setActive 
+	setActive,
+	setEndTime 
 } = panelSlice.actions;
 
 export default panelSlice.reducer;

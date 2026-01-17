@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import useSound from "use-sound";
-import { decrement, toggleRunning, resetDuration, setActive } from "../state/panelSlice";
+import { decrement, toggleRunning, resetDuration, setActive, setEndTime } from "../state/panelSlice";
 import { displayTime } from "../utils/timerConversions";
 
 export default function Timer({ title }) {
@@ -54,9 +54,14 @@ export default function Timer({ title }) {
 			dispatch(resetDuration(title));
 		}
 
+		if (title === activePanel) {
+			dispatch(setEndTime(title));
+		}
+
 	}, [activePanel])
 
 	const startPause = () => {
+		if (!isRunning) dispatch(setEndTime(title));
 		dispatch(toggleRunning({title, runValue: !isRunning}));
 		dispatch(setActive(title));
 	};
