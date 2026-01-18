@@ -41,7 +41,7 @@ export const panelSlice = createSlice({
 		},
 		decrement: (state, action) => {
 			const title = action.payload;
-			state[title].duration = (state.endTime - Date.now())/1000;
+			state[title].duration = Math.ceil((state.endTime - Date.now())/1000);
 			console.log(state[title].duration);
 		},
 		toggleRunning: (state, action) => {
