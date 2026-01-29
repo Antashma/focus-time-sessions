@@ -32,18 +32,18 @@ export default function Timer({ title }) {
 
 	useEffect(() => {
 		if (sessionMode && duration <=0) {
-				switch (activePanel) {
-					case "focus":
-						dispatch(setActive("break"));
-						dispatch(toggleRunning({title: "break", runValue: true}));	
-						break;
-					case "break":
-						dispatch(setActive("focus"));
-						dispatch(toggleRunning({title: "focus", runValue: true}));
-						break;
-					default:
-						break;
-				}
+			switch (activePanel) {
+				case "focus":
+					dispatch(setActive("break"));
+					dispatch(toggleRunning({title: "break", runValue: true}));	
+					break;
+				case "break":
+					dispatch(setActive("focus"));
+					dispatch(toggleRunning({title: "focus", runValue: true}));
+					break;
+				default:
+					break;
+			}
 		}
 	}, [duration])
 

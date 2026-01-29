@@ -8,15 +8,15 @@ const initialState = {
 	focus: {
 		duration: 1500,
 		isRunning: false,
-		bgColor: "#AA336A",
-		fgColor: "#FFB6C1",
+		bgColor: "transparent",
+		fgColor: "#fff",
 		endSound: focusEndSound,
 	},
 	break : {
 		duration: 300,
 		isRunning: false,
-		bgColor: "#FFB6C1",
-		fgColor: "#AA336A",
+		bgColor: "transparent",
+		fgColor: "#fff",
 		endSound: breakEndSound,
 	}
 };

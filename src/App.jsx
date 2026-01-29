@@ -7,18 +7,17 @@ function App() {
 
 	return (
 		<>
-		<header>
-			<h1>Focus Time: Sessions</h1>
-		</header>
-
 		<main>
-			<SessionPanel />
 			<Panel title="focus" />
+			<SessionPanel />
 			<Panel title="break" />
 		</main>
 		
 		<footer>
-			<p>Created with 💖 by <a href="http://www.antashma.dev">Antashma</a></p>
+			<h1>Focus Time: Sessions</h1>
+			<p>A simple 25/5 pomodoro timer.</p>
+			<p>Created with 💖 by <a href="http://www.antashma.dev" target='_blank'>Antashma</a></p>
+			<p>Starfield Background by <a href="https://dev.to/usman_awan/how-i-built-a-grok-inspired-starfield-shooting-stars-using-html-canvas-3872">Usman Awan</a></p>
 		</footer>
 		</>
 	)
