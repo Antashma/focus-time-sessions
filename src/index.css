@@ -1,23 +1,14 @@
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-:root {
-	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-	line-height: 1.5;
-
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
 .league-script-regular {
 	font-family: "League Script", cursive;
 	font-weight: 400;
 	font-style: normal;
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 html {
@@ -26,7 +17,11 @@ html {
 
 body {
 	display: flex;
-	font-size: 1.6rem;
 	min-width: 320px;
 	min-height: 0;
+	overflow: hidden;
+	background-color: black;
+	font-size: 1.6rem;
+	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
 }
