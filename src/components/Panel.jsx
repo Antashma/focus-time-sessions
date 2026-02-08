@@ -11,7 +11,8 @@ export default function Panel({ title }) {
     const panelStyle = {
         backgroundColor: bgColor,
         color: fgColor,
-        opacity: sessionMode && activePanel === title ? 1 : 0.5
+        // opacity: sessionMode && activePanel === title ? 1 : 0.5
+        display: !sessionMode || activePanel === title ? "flex" : "none"
     }
 
     return (

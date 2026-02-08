@@ -8,8 +8,8 @@ function App() {
 	return (
 		<>
 		<main>
-			<Panel title="focus" />
 			<SessionPanel />
+			<Panel title="focus" />
 			<Panel title="break" />
 		</main>
 		
