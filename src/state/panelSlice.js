@@ -28,7 +28,6 @@ export const panelSlice = createSlice({
 		setActive: (state, action) => {
 			const title = action.payload;
 			state.active = title;
-			//state.endTime = null;
 		},
 		setEndTime: (state, action) => {
 			if (!state.active) {
@@ -42,7 +41,6 @@ export const panelSlice = createSlice({
 		decrement: (state, action) => {
 			const title = action.payload;
 			state[title].duration = Math.ceil((state.endTime - Date.now())/1000);
-			console.log(state[title].duration);
 		},
 		toggleRunning: (state, action) => {
 			const { title, runValue } = action.payload;

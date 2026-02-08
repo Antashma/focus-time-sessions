@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import useSound from "use-sound";
 import { decrement, toggleRunning, resetDuration, setActive, setEndTime } from "../state/panelSlice";
 import { displayTime } from "../utils/timerConversions";
+import updateTitleText from "../utils/updateTitleText";
 
 export default function Timer({ title }) {
 	const activePanel = useSelector(state => state.panel.active);
@@ -26,6 +27,8 @@ export default function Timer({ title }) {
 		} else {
 			clearInterval(interval);
 		}
+
+		updateTitleText(isRunning, title, duration);
 
 		return () => clearInterval(interval);
 	}, [isRunning, duration]); 
